@@ -284,64 +284,99 @@
     <!-- Project Repositories -->
     <section id="projects">
       <div class="section-header">
-        <h2 class="section-title">Active Repositories</h2>
+        <h2 class="section-title">Active Repositories & Proposals</h2>
       </div>
       <div class="grid-2">
+        
+        <!-- Idea 1 -->
         <div class="card project-card">
-          <h3>Food Waste Donation Platform</h3>
+          <h3>Idea 1: Food Donation Platform</h3>
           <p>Connecting surplus food from restaurants to NGOs and volunteers in real time to reduce food waste.</p>
           <div class="meta-tags">
-            <span class="tag">Idea 1</span>
-            <span class="tag">React/Flutter</span>
+            <span class="tag">Flutter/React</span>
             <span class="tag">Node.js</span>
             <span class="tag">MongoDB</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/rizwanhanda/se_portfolio" target="_blank">GitHub Repository →</a>
-            <a href="assets/docs/Food_Waste_Donation_Platform-1.pdf" target="_blank">View PDF →</a>
+            <a href="https://github.com/rizwanhanda/se_portfolio" target="_blank">Repository →</a>
+            <a href="assets/docs/Idea1_Food_Donation.pdf" target="_blank">View Proposal PDF →</a>
           </div>
         </div>
 
+        <!-- Idea 2 -->
         <div class="card project-card">
-          <h3>Project Idea 2 (Pending)</h3>
-          <p>Repository and architectural specs for project idea 2 will be added upon proposal submission.</p>
+          <h3>Idea 2: MSME Job-Shop System</h3>
+          <p>Smart job-shop capacity & automated order dispatch system for micro-factories and component suppliers.</p>
           <div class="meta-tags">
-            <span class="tag">Idea 2</span>
-            <span class="tag">Pending</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">WebSockets</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/rizwanhanda/se_portfolio" target="_blank">GitHub Repository →</a>
+            <a href="https://github.com/rizwanhanda/se_portfolio" target="_blank">Repository →</a>
+            <a href="assets/docs/Idea2_MSME.pdf" target="_blank">View Proposal PDF →</a>
           </div>
         </div>
+
+        <!-- Idea 3 -->
+        <div class="card project-card">
+          <h3>Idea 3: GameLingo AI</h3>
+          <p>Real-time AI-powered Hindi dubbing for gaming to break language barriers and increase player immersion.</p>
+          <div class="meta-tags">
+            <span class="tag">Whisper AI</span>
+            <span class="tag">Coqui TTS</span>
+            <span class="tag">FastAPI</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/rizwanhanda/se_portfolio" target="_blank">Repository →</a>
+            <a href="assets/docs/Idea3_GameLingo_AI.pdf" target="_blank">View Proposal PDF →</a>
+          </div>
+        </div>
+
+        <!-- Idea 4 -->
+        <div class="card project-card">
+          <h3>Idea 4: GridLab GPU Broker</h3>
+          <p>Local LAN zero-trust peer compute & GPU broker for open-source university infrastructure.</p>
+          <div class="meta-tags">
+            <span class="tag">Docker/Wasm</span>
+            <span class="tag">mDNS</span>
+            <span class="tag">Zero-Trust</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/rizwanhanda/se_portfolio" target="_blank">Repository →</a>
+            <a href="assets/docs/Idea4_GridLab.pdf" target="_blank">View Proposal PDF →</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Presentation Slide Hub (Idea 1 to Idea 4) -->
+    <!-- Presentation Slide Hub -->
     <section id="docs">
       <div class="section-header">
         <h2 class="section-title">Project Idea Presentations</h2>
       </div>
 
       <div class="viewer-container">
-        <!-- Tab Controls -->
+        <!-- Tab Controls linking all 4 PDFs -->
         <div class="viewer-tabs">
-          <button class="tab-btn active" onclick="loadPresentation('assets/docs/Food_Waste_Donation_Platform-1.pdf', 'Idea 1: Food Waste Donation Platform ', 'assets/docs/Food_Waste_Donation_Platform-1.pdf')">Idea 1: Food Waste Platform</button>
-          <button class="tab-btn" onclick="loadPresentation('assets/docs/idea2-proposal.pdf', 'Idea 2: Project Proposal Title', 'assets/docs/idea2-proposal.pptx')">Idea 2</button>
-          <button class="tab-btn" onclick="loadPresentation('assets/docs/idea3-proposal.pdf', 'Idea 3: Project Proposal Title', 'assets/docs/idea3-proposal.pptx')">Idea 3</button>
-          <button class="tab-btn" onclick="loadPresentation('assets/docs/idea4-proposal.pdf', 'Idea 4: Project Proposal Title', 'assets/docs/idea4-proposal.pptx')">Idea 4</button>
+          <button class="tab-btn active" onclick="loadPresentation('assets/docs/Idea1_Food_Donation.pdf', 'Idea 1: Food Donation Platform', 'assets/docs/Idea1_Food_Donation.pdf')">Idea 1: Food Donation</button>
+          <button class="tab-btn" onclick="loadPresentation('assets/docs/Idea2_MSME.pdf', 'Idea 2: MSME Smart Job-Shop System', 'assets/docs/Idea2_MSME.pdf')">Idea 2: MSME Job-Shop</button>
+          <button class="tab-btn" onclick="loadPresentation('assets/docs/Idea3_GameLingo_AI.pdf', 'Idea 3: GameLingo AI Hindi Dubbing', 'assets/docs/Idea3_GameLingo_AI.pdf')">Idea 3: GameLingo AI</button>
+          <button class="tab-btn" onclick="loadPresentation('assets/docs/Idea4_GridLab.pdf', 'Idea 4: GridLab Zero-Trust Peer Compute', 'assets/docs/Idea4_GridLab.pdf')">Idea 4: GridLab Compute</button>
         </div>
 
         <!-- Inline PDF Frame -->
         <div class="iframe-container">
-          <iframe id="docViewer" src="assets/docs/Food_Waste_Donation_Platform-1.pdf"></iframe>
+          <iframe id="docViewer" src="assets/docs/Idea1_Food_Donation.pdf"></iframe>
         </div>
 
         <!-- Download & Fullscreen Controls -->
         <div class="viewer-actions">
-          <span id="docTitle" style="font-weight: 500; font-family: var(--font-mono);">Idea 1: Food Waste Donation Platform</span>
+          <span id="docTitle" style="font-weight: 500; font-family: var(--font-mono);">Idea 1: Food Donation Platform</span>
           <div>
-            <a id="pdfOpenLink" href="assets/docs/Food_Waste_Donation_Platform-1.pdf" target="_blank" class="btn-link">Open Fullscreen PDF</a>
-            <a id="pptxDownloadLink" href="assets/docs/Food_Waste_Donation_Platform-1.pdf" download class="btn-link">Download Presentation</a>
+            <a id="pdfOpenLink" href="assets/docs/Idea1_Food_Donation.pdf" target="_blank" class="btn-link">Open Fullscreen PDF</a>
+            <a id="pptxDownloadLink" href="assets/docs/Idea1_Food_Donation.pdf" download class="btn-link">Download Presentation</a>
           </div>
         </div>
       </div>
