@@ -35,7 +35,7 @@
 
     .container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
 
-    /* Top Navigation Header */
+    /* Navigation Header */
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -222,7 +222,10 @@
       border: 1px solid var(--border);
       padding: 1px 4px;
       border-radius: 3px;
+      color: var(--text);
+      text-decoration: none;
     }
+    .commit-hash:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -245,8 +248,8 @@
   <main class="container">
 
     <div class="summary-block">
-      <h1 class="summary-title">Software Engineering Project Proposal Hub</h1>
-      <p class="summary-subtitle">Unified group portal displaying individual project proposal presentations, source repositories, and version history.</p>
+      <h1 class="summary-title">Software Engineering Project Proposals</h1>
+      <p class="summary-subtitle">Centralized repository hosting group member proposals, source code repositories, and real-time commit history.</p>
     </div>
 
     <!-- Team Members -->
@@ -258,22 +261,22 @@
         <div class="card team-card">
           <div class="team-name">Pooja</div>
           <div class="team-role">Roll No: 1024031126</div>
-          <a href="https://github.com/your-username-1" target="_blank" class="member-gh">@pooja</a>
+          <a href="https://github.com/rizwanhanda" target="_blank" class="member-gh">@rizwanhanda</a>
         </div>
         <div class="card team-card">
           <div class="team-name">Member Two</div>
           <div class="team-role">Roll No: Pending</div>
-          <a href="https://github.com/your-username-2" target="_blank" class="member-gh">@member2</a>
+          <a href="https://github.com/rizwanhanda" target="_blank" class="member-gh">@member2</a>
         </div>
         <div class="card team-card">
           <div class="team-name">Member Three</div>
           <div class="team-role">Roll No: Pending</div>
-          <a href="https://github.com/your-username-3" target="_blank" class="member-gh">@member3</a>
+          <a href="https://github.com/rizwanhanda" target="_blank" class="member-gh">@member3</a>
         </div>
         <div class="card team-card">
           <div class="team-name">Member Four</div>
           <div class="team-role">Roll No: Pending</div>
-          <a href="https://github.com/your-username-4" target="_blank" class="member-gh">@member4</a>
+          <a href="https://github.com/rizwanhanda" target="_blank" class="member-gh">@member4</a>
         </div>
       </div>
     </section>
@@ -289,37 +292,38 @@
           <p>Connecting surplus food from restaurants to NGOs and volunteers in real time to reduce food waste.</p>
           <div class="meta-tags">
             <span class="tag">Idea 1</span>
-            <span class="tag">Flutter</span>
+            <span class="tag">React/Flutter</span>
             <span class="tag">Node.js</span>
             <span class="tag">MongoDB</span>
           </div>
           <div class="project-links">
-            <a href="assets/docs/Food_Waste_Donation_Platform-1.pdf" target="_blank">View Slides (PDF) →</a>
+            <a href="https://github.com/rizwanhanda/se_portfolio" target="_blank">GitHub Repository →</a>
+            <a href="assets/docs/Food_Waste_Donation_Platform-1.pdf" target="_blank">View PDF →</a>
           </div>
         </div>
 
         <div class="card project-card">
           <h3>Project Idea 2 (Pending)</h3>
-          <p>Repository and documentation for project idea 2 will be added upon proposal submission.</p>
+          <p>Repository and architectural specs for project idea 2 will be added upon proposal submission.</p>
           <div class="meta-tags">
             <span class="tag">Idea 2</span>
             <span class="tag">Pending</span>
           </div>
           <div class="project-links">
-            <a href="#">Repository →</a>
+            <a href="https://github.com/rizwanhanda/se_portfolio" target="_blank">GitHub Repository →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Presentation Slide Hub (Ideas 1 to 4) -->
+    <!-- Presentation Slide Hub (Idea 1 to Idea 4) -->
     <section id="docs">
       <div class="section-header">
         <h2 class="section-title">Project Idea Presentations</h2>
       </div>
 
       <div class="viewer-container">
-        <!-- Tab Controls for Ideas 1 - 4 -->
+        <!-- Tab Controls -->
         <div class="viewer-tabs">
           <button class="tab-btn active" onclick="loadPresentation('assets/docs/Food_Waste_Donation_Platform-1.pdf', 'Idea 1: Food Waste Donation Platform (Pooja)', 'assets/docs/Food_Waste_Donation_Platform-1.pdf')">Idea 1: Food Waste Platform</button>
           <button class="tab-btn" onclick="loadPresentation('assets/docs/idea2-proposal.pdf', 'Idea 2: Project Proposal Title', 'assets/docs/idea2-proposal.pptx')">Idea 2</button>
@@ -343,7 +347,7 @@
       </div>
     </section>
 
-    <!-- Changelog -->
+    <!-- Dynamic Commit Changelog -->
     <section id="changelog">
       <div class="section-header">
         <h2 class="section-title">Commit & Version Changelog</h2>
@@ -358,18 +362,12 @@
               <th>Author</th>
             </tr>
           </thead>
-          <tbody>
+          <!-- Dynamic Body Populated by JS -->
+          <tbody id="changelog-body">
             <tr>
-              <td>2026-08-03</td>
-              <td><span class="commit-hash">c4e12d9</span></td>
-              <td>Added Idea 1 PDF slides: Food Waste Donation Platform (Pooja)</td>
-              <td>Pooja</td>
-            </tr>
-            <tr>
-              <td>2026-07-22</td>
-              <td><span class="commit-hash">7b102ef</span></td>
-              <td>Initial portal setup and Vercel CD deployment</td>
-              <td>Group 04</td>
+              <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 20px;">
+                Fetching live commit history from GitHub...
+              </td>
             </tr>
           </tbody>
         </table>
@@ -379,6 +377,7 @@
   </main>
 
   <script>
+    // Tab switching for PDF/PPT viewer
     function loadPresentation(pdfPath, title, downloadPath) {
       document.getElementById('docViewer').src = pdfPath;
       document.getElementById('docTitle').innerText = title;
@@ -389,6 +388,52 @@
       tabs.forEach(tab => tab.classList.remove('active'));
       event.target.classList.add('active');
     }
+
+    // Automated GitHub Commit Logger for rizwanhanda/se_portfolio
+    const GITHUB_USERNAME = "rizwanhanda";
+    const GITHUB_REPO = "se_portfolio";
+
+    async function fetchLiveCommits() {
+      const tableBody = document.getElementById('changelog-body');
+      const apiUrl = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/commits?per_page=6`;
+
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error(`GitHub API Error: ${response.statusText}`);
+
+        const commits = await response.json();
+        tableBody.innerHTML = ''; // Clear loading row
+
+        commits.forEach(item => {
+          const hash = item.sha.substring(0, 7);
+          const message = item.commit.message.split('\n')[0];
+          const author = item.commit.author.name || (item.author ? item.author.login : 'Contributor');
+          const commitDate = new Date(item.commit.author.date).toISOString().split('T')[0];
+          const commitUrl = item.html_url;
+
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${commitDate}</td>
+            <td><a href="${commitUrl}" target="_blank" class="commit-hash">${hash}</a></td>
+            <td>${message}</td>
+            <td>${author}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+
+      } catch (error) {
+        console.error(error);
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="4" style="text-align: center; color: var(--text-muted); padding: 16px;">
+              Unable to load live commits. Verify repository visibility on GitHub.
+            </td>
+          </tr>
+        `;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchLiveCommits);
   </script>
 </body>
 </html>
