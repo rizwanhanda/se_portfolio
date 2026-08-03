@@ -84,7 +84,7 @@
     }
     .nav-links a:hover { color: var(--text); }
 
-    /* Hero / Header Summary */
+    /* Summary Header */
     .summary-block {
       padding: 40px 0 24px;
       border-bottom: 1px solid var(--border);
@@ -103,7 +103,7 @@
     }
     .section-title { font-size: 1rem; font-weight: 600; }
 
-    /* Component: Cards & Grids */
+    /* Grids & Cards */
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 
@@ -118,7 +118,6 @@
       padding: 16px;
     }
 
-    /* Team Cards */
     .team-card { text-align: left; }
     .team-name { font-size: 0.9rem; font-weight: 600; margin-bottom: 2px; }
     .team-role { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 12px; font-family: var(--font-mono); }
@@ -133,7 +132,6 @@
     }
     .member-gh:hover { text-decoration: underline; }
 
-    /* Project Cards */
     .project-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
     .project-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; }
     .meta-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
@@ -149,7 +147,7 @@
     .project-links a { color: var(--text); text-decoration: none; }
     .project-links a:hover { text-decoration: underline; }
 
-    /* Document & PPT Viewer Component */
+    /* Presentation Viewer */
     .viewer-container {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -180,7 +178,7 @@
       border-bottom-color: var(--accent);
       font-weight: 500;
     }
-    .iframe-container { height: 500px; width: 100%; background: #27272a; }
+    .iframe-container { height: 520px; width: 100%; background: #27272a; }
     .iframe-container iframe { width: 100%; height: 100%; border: none; }
     .viewer-actions {
       padding: 10px 16px;
@@ -199,7 +197,7 @@
     }
     .btn-link:hover { text-decoration: underline; }
 
-    /* Changelog Table */
+    /* Table */
     .table-wrapper {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -232,13 +230,13 @@
   <header>
     <div class="container header-inner">
       <div class="brand">
-        <span>CS301 Software Engineering</span>
+        <span>Software Engineering Lab</span>
         <span class="status-indicator"><span class="status-dot"></span>Group 04</span>
       </div>
       <nav class="nav-links">
         <a href="#team">Team</a>
         <a href="#projects">Repositories</a>
-        <a href="#docs">Presentations</a>
+        <a href="#docs">Project Ideas</a>
         <a href="#changelog">Changelog</a>
       </nav>
     </div>
@@ -247,8 +245,8 @@
   <main class="container">
 
     <div class="summary-block">
-      <h1 class="summary-title">Software Engineering Lab Artifacts</h1>
-      <p class="summary-subtitle">Unified repository for project source code, architectural specifications, lab slides, and contribution logs.</p>
+      <h1 class="summary-title">Software Engineering Project Proposal Hub</h1>
+      <p class="summary-subtitle">Unified group portal displaying individual project proposal presentations, source repositories, and version history.</p>
     </div>
 
     <!-- Team Members -->
@@ -258,97 +256,97 @@
       </div>
       <div class="grid-4">
         <div class="card team-card">
-          <div class="team-name">Member One</div>
-          <div class="team-role">Role / Frontend</div>
-          <a href="https://github.com/your-username-1" target="_blank" class="member-gh">@username1</a>
+          <div class="team-name">Pooja</div>
+          <div class="team-role">Roll No: 1024031126</div>
+          <a href="https://github.com/your-username-1" target="_blank" class="member-gh">@pooja</a>
         </div>
         <div class="card team-card">
           <div class="team-name">Member Two</div>
-          <div class="team-role">Role / Backend</div>
-          <a href="https://github.com/your-username-2" target="_blank" class="member-gh">@username2</a>
+          <div class="team-role">Roll No: Pending</div>
+          <a href="https://github.com/your-username-2" target="_blank" class="member-gh">@member2</a>
         </div>
         <div class="card team-card">
           <div class="team-name">Member Three</div>
-          <div class="team-role">Role / QA & Docs</div>
-          <a href="https://github.com/your-username-3" target="_blank" class="member-gh">@username3</a>
+          <div class="team-role">Roll No: Pending</div>
+          <a href="https://github.com/your-username-3" target="_blank" class="member-gh">@member3</a>
         </div>
         <div class="card team-card">
           <div class="team-name">Member Four</div>
-          <div class="team-role">Role / Integration</div>
-          <a href="https://github.com/your-username-4" target="_blank" class="member-gh">@username4</a>
+          <div class="team-role">Roll No: Pending</div>
+          <a href="https://github.com/your-username-4" target="_blank" class="member-gh">@member4</a>
         </div>
       </div>
     </section>
 
-    <!-- Projects & Code Repositories -->
+    <!-- Project Repositories -->
     <section id="projects">
       <div class="section-header">
-        <h2 class="section-title">Project Repositories</h2>
+        <h2 class="section-title">Active Repositories</h2>
       </div>
       <div class="grid-2">
-        
         <div class="card project-card">
-          <h3>Main Web Portal</h3>
-          <p>Centralized documentation portal hosting lab deliverables, architecture slides, and changelogs.</p>
+          <h3>Food Waste Donation Platform</h3>
+          <p>Connecting surplus food from restaurants to NGOs and volunteers in real time to reduce food waste.</p>
           <div class="meta-tags">
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">Vercel</span>
-            <span class="tag">Main Hub</span>
+            <span class="tag">Idea 1</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/YOUR_GROUP_ORG/main-portal" target="_blank">Repository →</a>
-            <a href="https://your-team.vercel.app">Live Build →</a>
+            <a href="assets/docs/Food_Waste_Donation_Platform-1.pdf" target="_blank">View Slides (PDF) →</a>
           </div>
         </div>
 
         <div class="card project-card">
-          <h3>Sub-Module / Group Project</h3>
-          <p>Core software engineering term project codebase and automated test scripts.</p>
+          <h3>Project Idea 2 (Pending)</h3>
+          <p>Repository and documentation for project idea 2 will be added upon proposal submission.</p>
           <div class="meta-tags">
-            <span class="tag">Python</span>
-            <span class="tag">REST API</span>
-            <span class="tag">v1.0.0</span>
+            <span class="tag">Idea 2</span>
+            <span class="tag">Pending</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/YOUR_GROUP_ORG/sub-project" target="_blank">Repository →</a>
-            <a href="assets/docs/lab1-requirements.pdf" target="_blank">Spec PDF →</a>
+            <a href="#">Repository →</a>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Presentations (PPTs / PDFs) -->
+    <!-- Presentation Slide Hub (Ideas 1 to 4) -->
     <section id="docs">
       <div class="section-header">
-        <h2 class="section-title">Presentation Slides</h2>
+        <h2 class="section-title">Project Idea Presentations</h2>
       </div>
 
       <div class="viewer-container">
+        <!-- Tab Controls for Ideas 1 - 4 -->
         <div class="viewer-tabs">
-          <button class="tab-btn active" onclick="loadPresentation('assets/docs/lab1-requirements.pdf', 'Lab 1: Requirement Analysis Specs', 'assets/docs/lab1-requirements.pptx')">Lab 1: Requirements</button>
-          <button class="tab-btn" onclick="loadPresentation('assets/docs/lab2-architecture.pdf', 'Lab 2: System Architecture & UML', 'assets/docs/lab2-architecture.pptx')">Lab 2: Architecture</button>
-          <button class="tab-btn" onclick="loadPresentation('assets/docs/lab3-testing.pdf', 'Lab 3: Verification & Test Cases', 'assets/docs/lab3-testing.pptx')">Lab 3: Testing</button>
+          <button class="tab-btn active" onclick="loadPresentation('assets/docs/Food_Waste_Donation_Platform-1.pdf', 'Idea 1: Food Waste Donation Platform (Pooja)', 'assets/docs/Food_Waste_Donation_Platform-1.pdf')">Idea 1: Food Waste Platform</button>
+          <button class="tab-btn" onclick="loadPresentation('assets/docs/idea2-proposal.pdf', 'Idea 2: Project Proposal Title', 'assets/docs/idea2-proposal.pptx')">Idea 2</button>
+          <button class="tab-btn" onclick="loadPresentation('assets/docs/idea3-proposal.pdf', 'Idea 3: Project Proposal Title', 'assets/docs/idea3-proposal.pptx')">Idea 3</button>
+          <button class="tab-btn" onclick="loadPresentation('assets/docs/idea4-proposal.pdf', 'Idea 4: Project Proposal Title', 'assets/docs/idea4-proposal.pptx')">Idea 4</button>
         </div>
 
+        <!-- Inline PDF Frame -->
         <div class="iframe-container">
-          <iframe id="docViewer" src="assets/docs/lab1-requirements.pdf"></iframe>
+          <iframe id="docViewer" src="assets/docs/Food_Waste_Donation_Platform-1.pdf"></iframe>
         </div>
 
+        <!-- Download & Fullscreen Controls -->
         <div class="viewer-actions">
-          <span id="docTitle" style="font-weight: 500; font-family: var(--font-mono);">Lab 1: Requirement Analysis Specs</span>
+          <span id="docTitle" style="font-weight: 500; font-family: var(--font-mono);">Idea 1: Food Waste Donation Platform (Pooja)</span>
           <div>
-            <a id="pdfOpenLink" href="assets/docs/lab1-requirements.pdf" target="_blank" class="btn-link">Open Fullscreen PDF</a>
-            <a id="pptxDownloadLink" href="assets/docs/lab1-requirements.pptx" download class="btn-link">Download .PPTX</a>
+            <a id="pdfOpenLink" href="assets/docs/Food_Waste_Donation_Platform-1.pdf" target="_blank" class="btn-link">Open Fullscreen PDF</a>
+            <a id="pptxDownloadLink" href="assets/docs/Food_Waste_Donation_Platform-1.pdf" download class="btn-link">Download Presentation</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contribution Changelog -->
+    <!-- Changelog -->
     <section id="changelog">
       <div class="section-header">
-        <h2 class="section-title">Commit & Contribution Changelog</h2>
+        <h2 class="section-title">Commit & Version Changelog</h2>
       </div>
       <div class="table-wrapper">
         <table>
@@ -358,30 +356,20 @@
               <th>Commit</th>
               <th>Description / Milestone</th>
               <th>Author</th>
-              <th>Pull Request</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>2026-08-03</td>
-              <td><span class="commit-hash">a8f3b21</span></td>
-              <td>Added embedded PDF presentation viewer and assets directory</td>
-              <td>Member Three</td>
-              <td><a href="https://github.com/YOUR_GROUP_ORG/main-portal/pull/3" class="btn-link">#3</a></td>
-            </tr>
-            <tr>
-              <td>2026-07-29</td>
-              <td><span class="commit-hash">e4c19a0</span></td>
-              <td>Uploaded Lab 2 System Architecture diagrams and specs</td>
-              <td>Member Two</td>
-              <td><a href="https://github.com/YOUR_GROUP_ORG/main-portal/pull/2" class="btn-link">#2</a></td>
+              <td><span class="commit-hash">c4e12d9</span></td>
+              <td>Added Idea 1 PDF slides: Food Waste Donation Platform (Pooja)</td>
+              <td>Pooja</td>
             </tr>
             <tr>
               <td>2026-07-22</td>
               <td><span class="commit-hash">7b102ef</span></td>
-              <td>Initial repository setup, HTML portal frame, and Vercel CD integration</td>
-              <td>Member One</td>
-              <td><a href="https://github.com/YOUR_GROUP_ORG/main-portal/pull/1" class="btn-link">#1</a></td>
+              <td>Initial portal setup and Vercel CD deployment</td>
+              <td>Group 04</td>
             </tr>
           </tbody>
         </table>
@@ -391,11 +379,11 @@
   </main>
 
   <script>
-    function loadPresentation(pdfPath, title, pptxPath) {
+    function loadPresentation(pdfPath, title, downloadPath) {
       document.getElementById('docViewer').src = pdfPath;
       document.getElementById('docTitle').innerText = title;
       document.getElementById('pdfOpenLink').href = pdfPath;
-      document.getElementById('pptxDownloadLink').href = pptxPath;
+      document.getElementById('pptxDownloadLink').href = downloadPath;
 
       const tabs = document.querySelectorAll('.tab-btn');
       tabs.forEach(tab => tab.classList.remove('active'));
