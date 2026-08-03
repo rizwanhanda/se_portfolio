@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SE Lab Portfolio | Team 04</title>
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --brand-primary: #2563eb;
+      --brand-hover: #1d4ed8;
+      --brand-light: #eff6ff;
+      --border-color: #e2e8f0;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* --- Navigation --- */
+    nav {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge {
+      background: var(--brand-light);
+      color: var(--brand-primary);
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-weight: 600;
+      border: 1px solid rgba(37, 99, 235, 0.2);
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--brand-primary); }
+
+    /* --- Hero Section --- */
+    .hero {
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--brand-primary);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: var(--brand-hover); }
+
+    /* --- Section Styling --- */
+    section { margin-top: 48px; }
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* --- Grid Systems --- */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+    @media (max-width: 768px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+    }
+
+    /* --- Cards --- */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* --- Team Cards --- */
+    .member-card { text-align: center; }
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+    .member-card h4 { font-size: 1rem; margin-bottom: 4px; }
+    .member-card p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px; }
+    .member-link { font-size: 0.8rem; color: var(--brand-primary); text-decoration: none; font-weight: 500; }
+
+    /* --- Project Cards --- */
+    .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .version-tag { font-size: 0.75rem; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-weight: 600; color: var(--text-secondary); }
+    .tech-stack { display: flex; gap: 6px; flex-wrap: wrap; margin: 16px 0; }
+    .tech-tag { font-size: 0.75rem; background: #f8fafc; border: 1px solid var(--border-color); padding: 2px 8px; border-radius: 4px; }
+
+    /* --- Interactive PPT Viewer --- */
+    .ppt-viewer-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .ppt-tabs {
+      display: flex;
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--border-color);
+      overflow-x: auto;
+    }
+    .tab-btn {
+      padding: 12px 20px;
+      border: none;
+      background: none;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+    }
+    .tab-btn.active {
+      background: #fff;
+      color: var(--brand-primary);
+      border-bottom-color: var(--brand-primary);
+      font-weight: 600;
+    }
+    .iframe-wrapper { height: 480px; width: 100%; background: #000; }
+    .iframe-wrapper iframe { width: 100%; height: 100%; border: none; }
+    .ppt-footer {
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      font-size: 0.85rem;
+    }
+
+    /* --- Table --- */
+    .table-container {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+    }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.875rem; }
+    th { background: #f8fafc; padding: 12px 16px; border-bottom: 1px solid var(--border-color); color: var(--text-secondary); font-weight: 600; }
+    td { padding: 12px 16px; border-bottom: 1px solid var(--border-color); }
+    tr:last-child td { border-bottom: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-wrapper">
+      <div class="logo">
+        🚀 SE Lab Group 04 <span class="badge">v1.2.0</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#team">Team</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#presentations">PPTs & Docs</a></li>
+        <li><a href="#changelog">Contributions</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    
+    <!-- Hero Header -->
+    <header class="hero">
+      <h1>Software Engineering Lab Portfolio</h1>
+      <p>Centralized repository for projects, software design specifications, presentation slides, and version history.</p>
+      <a href="https://github.com/YOUR_ORGANIZATION_OR_USERNAME/YOUR_REPO" target="_blank" class="btn">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        View GitHub Organization
+      </a>
+    </header>
+
+    <!-- Section 1: Team Members -->
+    <section id="team">
+      <h2 class="section-title">👥 Group Members</h2>
+      <div class="grid-4">
+        <div class="card member-card">
+          <div class="avatar">M1</div>
+          <h4>Member Name 1</h4>
+          <p>Frontend Lead</p>
+          <a href="https://github.com/username1" target="_blank" class="member-link">GitHub Profile →</a>
+        </div>
+        <div class="card member-card">
+          <div class="avatar">M2</div>
+          <h4>Member Name 2</h4>
+          <p>Backend & Architecture</p>
+          <a href="https://github.com/username2" target="_blank" class="member-link">GitHub Profile →</a>
+        </div>
+        <div class="card member-card">
+          <div class="avatar">M3</div>
+          <h4>Member Name 3</h4>
+          <p>Documentation & QA</p>
+          <a href="https://github.com/username3" target="_blank" class="member-link">GitHub Profile →</a>
+        </div>
+        <div class="card member-card">
+          <div class="avatar">M4</div>
+          <h4>Member Name 4</h4>
+          <p>DevOps & Testing</p>
+          <a href="https://github.com/username4" target="_blank" class="member-link">GitHub Profile →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Individual / Sub-Projects -->
+    <section id="projects">
+      <h2 class="section-title">💻 Projects & Modules</h2>
+      <div class="grid-2">
+        
+        <div class="card">
+          <div class="project-header">
+            <h3>Project Alpha: Core Web Portal</h3>
+            <span class="version-tag">v1.2.0</span>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">Main user dashboard for submitting lab assignments and tracking peer evaluations.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">HTML5/CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Vercel</span>
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 12px;">
+            <a href="#" class="member-link">Source Repo</a>
+            <a href="#" class="member-link">Live Demo</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="project-header">
+            <h3>Project Beta: Inspection Module</h3>
+            <span class="version-tag">v0.9.1</span>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-secondary);">Automated verification framework for reviewing code quality metrics and standard guidelines.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">REST API</span>
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 12px;">
+            <a href="#" class="member-link">Source Repo</a>
+            <a href="#" class="member-link">Documentation</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: PPT & Presentation Hub -->
+    <section id="presentations">
+      <h2 class="section-title">📊 Presentations & Design Slides</h2>
+      
+      <div class="ppt-viewer-card">
+        <!-- Interactive PDF Tabs -->
+        <div class="ppt-tabs">
+          <button class="tab-btn active" onclick="switchPdf('assets/docs/lab1-presentation.pdf', 'Lab 1: Requirement Analysis', 'assets/docs/lab1-presentation.pptx')">Lab 1: Requirements</button>
+          <button class="tab-btn" onclick="switchPdf('assets/docs/lab2-presentation.pdf', 'Lab 2: System Architecture', 'assets/docs/lab2-presentation.pptx')">Lab 2: Architecture Design</button>
+          <button class="tab-btn" onclick="switchPdf('assets/docs/lab3-presentation.pdf', 'Lab 3: Final Verification', 'assets/docs/lab3-presentation.pptx')">Lab 3: Final Demo</button>
+        </div>
+
+        <!-- Embedded Viewer Frame -->
+        <div class="iframe-wrapper">
+          <iframe id="pdfFrame" src="assets/docs/lab1-presentation.pdf"></iframe>
+        </div>
+
+        <!-- Action Links -->
+        <div class="ppt-footer">
+          <span id="currentPdfTitle" style="font-weight: 600;">Lab 1: Requirement Analysis</span>
+          <div>
+            <a id="fullscreenLink" href="assets/docs/lab1-presentation.pdf" target="_blank" style="margin-right: 12px; color: var(--text-secondary);">🔍 Fullscreen PDF</a>
+            <a id="downloadPptxLink" href="assets/docs/lab1-presentation.pptx" download style="color: var(--brand-primary); font-weight: 500;">💾 Download .PPTX</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Contribution & Version History -->
+    <section id="changelog">
+      <h2 class="section-title">📜 Version & Contribution Log</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Version</th>
+              <th>Deliverable / Module</th>
+              <th>Primary Contributor</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>v1.2.0</strong></td>
+              <td>Presentation Hub & PDF Embedded Viewer</td>
+              <td>Member 3</td>
+              <td>Aug 03, 2026</td>
+              <td><span class="badge" style="background:#dcfce7; color:#15803d; border:none;">Merged</span></td>
+            </tr>
+            <tr>
+              <td><strong>v1.1.0</strong></td>
+              <td>System Architecture Specs & Lab 2 PPT</td>
+              <td>Member 2</td>
+              <td>Jul 28, 2026</td>
+              <td><span class="badge" style="background:#dcfce7; color:#15803d; border:none;">Merged</span></td>
+            </tr>
+            <tr>
+              <td><strong>v1.0.0</strong></td>
+              <td>Initial Site Setup & Team Landing Page</td>
+              <td>Member 1 & Member 4</td>
+              <td>Jul 20, 2026</td>
+              <td><span class="badge" style="background:#dcfce7; color:#15803d; border:none;">Merged</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Dynamic Tab Script -->
+  <script>
+    function switchPdf(pdfPath, title, pptxPath) {
+      document.getElementById('pdfFrame').src = pdfPath;
+      document.getElementById('currentPdfTitle').innerText = title;
+      document.getElementById('fullscreenLink').href = pdfPath;
+      document.getElementById('downloadPptxLink').href = pptxPath;
+
+      // Update active tab button style
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
